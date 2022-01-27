@@ -434,6 +434,16 @@ body {
   margin-left: var(--card-gap);
   margin-top: var(--card-gap);
 }
+.project-link {
+  display: block;
+  text-decoration: none;
+}
+.project-link:hover,
+.project-link:focus {
+  border: 1px solid var(--bottom-border);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .project-content {
   padding: 20px 24px;
   border: 1px solid var(--bottom-border);
@@ -450,6 +460,7 @@ body {
 .project_about {
   font-size: 16px;
   line-height: 1.8;
+  color: var(--primary-text-color);
 }
 /* =======end portfolio section======= */
 /* ======button ========*/
