@@ -8,10 +8,11 @@
   --accent-color: #2196f3;
   --accent-hover: #188ce8;
   --primary-white-color: #ffffff;
-  --secondary-background: #2f303a;
-  --team-section-background: #f5f4fa;
+  --primary-background: #2f303a;
+  --secondary-background: #f5f4fa;
   --top-border: #ececec;
   --bottom-border: #eeeeee;
+  --icons-color: #afb1b8;
   --card-gap: 30px;
 }
 h1,
@@ -33,7 +34,7 @@ img {
   height: auto;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
@@ -68,7 +69,7 @@ body {
   align-items: center;
 }
 .logo {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.1;
@@ -78,7 +79,7 @@ body {
   padding: 24px 0;
 }
 .logo-accent {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.1;
@@ -121,9 +122,22 @@ body {
   text-decoration: none;
   color: var(--primary-text-color);
   padding: 32px 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 .contact-item + .contact-item {
   margin-left: 50px;
+}
+.top-contact-icon {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+.icon-phone {
+  width: 10px;
+  height: 16px;
 }
 /* ==== end-header ====== */
 /* ====section hero ====*/
@@ -138,14 +152,14 @@ body {
     ),
     url(../img/index/hero.jpg);
   background-repeat: no-repeat;
-  background-position: auto;
+  background-position: center;
   background-size: cover;
 }
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
-  /* background-color: var(--secondary-background); */
+  background-color: var(--primary-background);
 }
 .hero_title {
   width: 696px;
@@ -171,10 +185,23 @@ body {
   display: flex;
 }
 .features-item {
-  max-width: 270px;
+  width: 270px;
 }
 .features-item:nth-child(n + 2) {
   margin-left: 30px;
+}
+.features-icons {
+  display: flex;
+  height: 120px;
+  background-color: var(--secondary-background);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.features-icon {
+  width: 70px;
+  height: 70px;
 }
 .features_title {
   margin-bottom: 10px;
@@ -186,7 +213,8 @@ body {
 .section-features,
 .section-filter, /* in portfolio*/ 
 .section-work,
-.section-team {
+.section-team,
+.section-clients {
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -201,7 +229,8 @@ body {
   margin-left: 30px;
 }
 .work,
-.team {
+.team,
+.clients {
   margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
@@ -209,14 +238,16 @@ body {
   text-align: center;
   color: var(--title-text-color);
 }
+
 /* Team */
 .section-team {
-  background-color: var(--team-section-background);
+  background-color: var(--secondary-background);
 }
 .team-list {
   display: flex;
   margin-left: calc(-1 * var(--card-gap));
 }
+
 .team-item {
   flex-basis: calc(100% / 4 - var(--card-gap));
   margin-left: var(--card-gap);
@@ -242,17 +273,117 @@ body {
   font-size: 16px;
   line-height: 1.1;
   text-align: center;
+  margin-bottom: 16px;
 }
+.team-socials-list {
+  display: flex;
+  justify-content: center;
+}
+.team-socials-link {
+  display: flex;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: var(--icons-color);
+}
+.team-socials-item + .team-socials-item {
+  margin-left: 10px;
+}
+.team-socials-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.team-socials-link:hover,
+.team-socials-link:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+}
+/*=======clients=======*/
+.clients {
+  margin-bottom: 50px;
+}
+.clients-list {
+  display: flex;
+}
+.clients-item + .clients-item {
+  margin-left: var(--card-gap);
+}
+.clients-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icons-color);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  color: var(--icons-color);
+}
+.clients-icon {
+  width: 106px;
+  height: 60px;
+  fill: currentColor;
+}
+.clients-link:hover {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+/*=======END clients=======*/
 /* ===END sections studio ===*/
 /* =======footer======= */
 .footer {
-  background-color: var(--secondary-background);
+  background-color: var(--primary-background);
   padding-top: 60px;
   padding-bottom: 60px;
 }
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.footer-block + .footer-block {
+  margin-left: 70px;
+}
+.join-text {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--primary-white-color);
+}
+.join-socials-list {
+  display: flex;
+  justify-content: center;
+}
+.join-socials-link {
+  display: flex;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-white-color);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1)
+  );
+}
+.join-socials-item + .join-socials-item {
+  margin-left: 10px;
+}
+.join-socials-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.join-socials-link:hover,
+.join-socials-link:focus {
+  background-color: var(--accent-color);
+}
 .logo-footer {
   display: flex;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.1;
@@ -276,11 +407,11 @@ body {
 }
 .address-map:hover,
 .address-map:focus {
-  color: var(--accent-hover);
+  color: var(--accent-color);
 }
 .address-contact:hover,
 .address-contact:focus {
-  color: var(--accent-hover);
+  color: var(--accent-color);
 }
 /* ========end footer===== */
 /* =======portfolio section======= */
@@ -348,7 +479,7 @@ body {
   border-radius: 4px;
 }
 .button_secondary {
-  background-color: var(--team-section-background);
+  background-color: var(--secondary-background);
   color: var(--title-text-color);
 }
 .button_current {
